@@ -55,7 +55,7 @@
             <span data-i18n="str-u">STR</span>
             <input class="num" type="text" name="attr_strength_base" value="10">
             <span data-i18n="dex-u">DEX</span>
-            <input class="num" type="text" name="attr_dexterity_base" value="10">
+            <input class="num" type="text" name="attr_Nimbleness_base" value="10">
             <span data-i18n="con-u">CON</span>
             <input class="num" type="text" name="attr_constitution_base" value="10">
             <span data-i18n="int-u">INT</span>
@@ -233,8 +233,8 @@
                 <select name="attr_spellcasting_ability" style="margin: 0px; width: auto; padding: 0px; height: 15px;">
                     <option value="0*" data-i18n="none-u">NONE</option>
                     <option value="@{strength_mod}+" data-i18n="strength-u">STRENGTH</option>
-                    <option value="@{dexterity_mod}+" data-i18n="dexterity-u">DEXTERITY</option>
-                    <option value="@{constitution_mod}+" data-i18n="constitution-u">CONSTITUTION</option>
+                    <option value="@{nimbleness_mod}+" data-i18n="nimbleness-u">NIMBLENESS</option>
+                    <option value="@{Aim_mod}+" data-i18n="Aim-u">AIM</option>
                     <option value="@{intelligence_mod}+" data-i18n="intelligence-u">INTELLIGENCE</option>
                     <option value="@{wisdom_mod}+" data-i18n="wisdom-u">WISDOM</option>
                     <option value="@{charisma_mod}+" data-i18n="charisma-u">CHARISMA</option>
@@ -349,19 +349,19 @@
                 </button>
             </div>
             <div class="attr-container">
-                <button type="roll" name="roll_npc_dex" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{dexterity}}} {{mod=[[[[@{dexterity_mod}]][DEX]]]}} {{r1=[[@{d20}+[[@{dexterity_mod}]][DEX]]]}} @{rtype}+[[@{dexterity_mod}]][DEX]]]}} {{type=Ability}}">
+                <button type="roll" name="roll_npc_dex" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{nimbleness}}} {{mod=[[[[@{dexterity_mod}]][DEX]]]}} {{r1=[[@{d20}+[[@{dexterity_mod}]][DEX]]]}} @{rtype}+[[@{dexterity_mod}]][DEX]]]}} {{type=Ability}}">
                     <span class="bold" data-i18n="dex-u">DEX</span>
-                    <span name="attr_dexterity"></span>
+                    <span name="attr_nimbleness"></span>
                     <input class="negativeflag" type="hidden" name="attr_npc_dex_negative" value="0">
-                    <span class="npcattr" name="attr_dexterity_mod"></span>
+                    <span class="npcattr" name="attr_nimbleness_mod"></span>
                 </button>
             </div>
             <div class="attr-container">
-                <button type="roll" name="roll_npc_con" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{constitution}}} {{mod=[[[[@{constitution_mod}]][CON]]]}} {{r1=[[@{d20}+[[@{constitution_mod}]][CON]]]}} @{rtype}+[[@{constitution_mod}]][CON]]]}} {{type=Ability}}">
+                <button type="roll" name="roll_npc_con" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{aim}}} {{mod=[[[[@{constitution_mod}]][CON]]]}} {{r1=[[@{d20}+[[@{constitution_mod}]][CON]]]}} @{rtype}+[[@{constitution_mod}]][CON]]]}} {{type=Ability}}">
                     <span class="bold" data-i18n="con-u">CON</span>
-                    <span name="attr_constitution"></span>
+                    <span name="attr_aim"></span>
                     <input class="negativeflag" type="hidden" name="attr_npc_con_negative" value="0">
-                    <span class="npcattr" name="attr_constitution_mod"></span>
+                    <span class="npcattr" name="attr_aim_mod"></span>
                 </button>
             </div>
             <div class="attr-container">
@@ -399,12 +399,12 @@
                 <span class="stat" name="attr_npc_str_save"></span>
             </button>
             <input class="flag" type="hidden" name="attr_npc_dex_save_flag" value="0">
-            <button type="roll" name="roll_npc_dex_save" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{dexterity-save}}} {{mod=[[[[@{npc_dex_save}]][DEX SAVE]]]}} {{r1=[[@{d20}+[[@{npc_dex_save}]][DEX SAVE]]]}} @{rtype}+[[@{npc_dex_save}]][DEX SAVE]]]}} {{type=Save}}">
+            <button type="roll" name="roll_npc_dex_save" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{nimbleness-save}}} {{mod=[[[[@{npc_dex_save}]][DEX SAVE]]]}} {{r1=[[@{d20}+[[@{npc_dex_save}]][DEX SAVE]]]}} @{rtype}+[[@{npc_dex_save}]][DEX SAVE]]]}} {{type=Save}}">
                 <span data-i18n="dex">Dex</span>
                 <span class="stat" name="attr_npc_dex_save"></span>
             </button>
             <input class="flag" type="hidden" name="attr_npc_con_save_flag" value="0">
-            <button type="roll" name="roll_npc_con_save" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{constitution-save}}} {{mod=[[[[@{npc_con_save}]][CON SAVE]]]}} {{r1=[[@{d20}+[[@{npc_con_save}]][CON SAVE]]]}} @{rtype}+[[@{npc_con_save}]][CON SAVE]]]}} {{type=Save}}">
+            <button type="roll" name="roll_npc_con_save" value="@{wtype}&{template:npc} @{npc_name_flag} {{rname=^{aim-save}}} {{mod=[[[[@{npc_con_save}]][CON SAVE]]]}} {{r1=[[@{d20}+[[@{npc_con_save}]][CON SAVE]]]}} @{rtype}+[[@{npc_con_save}]][CON SAVE]]]}} {{type=Save}}">
                 <span data-i18n="con">Con</span>
                 <span class="stat" name="attr_npc_con_save"></span>
             </button>
@@ -878,8 +878,8 @@
                                     <select name="attr_spellsave">
                                         <option value="" selected="selected" data-i18n="none-u">NONE</option>
                                         <option value="Strength" data-i18n="str-u">STR</option>
-                                        <option value="Dexterity" data-i18n="dex-u">DEX</option>
-                                        <option value="Constitution" data-i18n="con-u">CON</option>
+                                        <option value="Nimbleness" data-i18n="dex-u">NIM</option>
+                                        <option value="Aim" data-i18n="con-u">AIM</option>
                                         <option value="Intelligence" data-i18n="int-u">INT</option>
                                         <option value="Wisdom" data-i18n="wis-u">WIS</option>
                                         <option value="Charisma" data-i18n="cha-u">CHA</option>
@@ -1037,8 +1037,8 @@
                     </div>
                 </div>
                 <div class="attr-container">
-                    <button type="roll" name="roll_dexterity" value="@{wtype}&{template:simple} {{rname=^{dexterity-u}}} {{mod=@{dexterity_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{dexterity_mod}@{jack_attr}[DEX]]]}} @{rtype}+@{dexterity_mod}@{jack_attr}[DEX]]]}} @{charname_output}" data-i18n="dexterity-u">DEXTERITY</button>
-                    <span class="attr" name="attr_dexterity_mod" title="@{dexterity_mod}">0</span>
+                    <button type="roll" name="roll_nimbleness" value="@{wtype}&{template:simple} {{rname=^{nimbleness-u}}} {{mod=@{nimbleness_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{nimbleness_mod}@{jack_attr}[NIM]]]}} @{rtype}+@{nimbleness_mod}@{jack_attr}[NIM]]]}} @{charname_output}" data-i18n="nimbleness-u">nimbleness</button>
+                    <span class="attr" name="attr_nimbleness_mod" title="@{nimbleness_mod}">0</span>
                     <div class="attr-mod">
                         <input class="baseattr" type="text" name="attr_dexterity_base" title="@{dexterity}" value="10">
                         <input type="hidden" name="attr_dexterity" value="10">
@@ -1047,13 +1047,13 @@
                     </div>
                 </div>
                 <div class="attr-container">
-                    <button type="roll" name="roll_constitution" value="@{wtype}&{template:simple} {{rname=^{constitution-u}}} {{mod=@{constitution_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{constitution_mod}@{jack_attr}[CON]]]}} @{rtype}+@{constitution_mod}@{jack_attr}[CON]]]}} @{charname_output}" data-i18n="constitution-u">CONSTITUTION</button>
-                    <span class="attr" name="attr_constitution_mod" title="@{constitution_mod}">0</span>
+                    <button type="roll" name="roll_aim" value="@{wtype}&{template:simple} {{rname=^{aim-u}}} {{mod=@{aim_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{aim_mod}@{jack_attr}[AIM]]]}} @{rtype}+@{aim_mod}@{jack_attr}[AIM]]]}} @{charname_output}" data-i18n="aim-u">AIM</button>
+                    <span class="attr" name="attr_aim_mod" title="@{aim_mod}">0</span>
                     <div class="attr-mod">
-                        <input class="baseattr" type="text" name="attr_constitution_base" title="@{constitution}" value="10">
-                        <input type="hidden" name="attr_constitution" value="10">
-                        <input class="attr-flag" type="hidden" name="attr_constitution_flag" value="0">
-                        <span class="finalattr" name="attr_constitution">
+                        <input class="baseattr" type="text" name="attr_aim_base" title="@{aim}" value="10">
+                        <input type="hidden" name="attr_aim" value="10">
+                        <input class="attr-flag" type="hidden" name="attr_aim_flag" value="0">
+                        <span class="finalattr" name="attr_aim">
                     </div>
                 </div>
                 <div class="attr-container">
@@ -1111,14 +1111,14 @@
                         <button type="roll" name="roll_strength_save" value="@{wtype}&{template:simple} {{rname=^{strength-save-u}}} {{mod=@{strength_save_bonus}}} {{r1=[[@{d20}+@{strength_save_bonus}@{pbd_safe}]]}} @{rtype}+@{strength_save_bonus}@{pbd_safe}]]}} @{global_save_mod} @{charname_output}" data-i18n="strength">Strength</button>
                     </div>
                     <div class="saving-throw">
-                        <input type="checkbox" name="attr_dexterity_save_prof" title="@{dexterity_save_prof}" value="(@{pb})">
-                        <span name="attr_dexterity_save_bonus" title="@{dexterity_save_bonus}">0</span>
-                        <button type="roll" name="roll_dexterity_save" value="@{wtype}&{template:simple} {{rname=^{dexterity-save-u}}} {{mod=@{dexterity_save_bonus}}} {{r1=[[@{d20}+@{dexterity_save_bonus}@{pbd_safe}]]}} @{rtype}+@{dexterity_save_bonus}@{pbd_safe}]]}} @{global_save_mod} @{charname_output}" data-i18n="dexterity">Dexterity</button>
+                        <input type="checkbox" name="attr_nimbleness_save_prof" title="@{nimbleness_save_prof}" value="(@{pb})">
+                        <span name="attr_nimbleness_save_bonus" title="@{nimbleness_save_bonus}">0</span>
+                        <button type="roll" name="roll_nimbleness_save" value="@{wtype}&{template:simple} {{rname=^{nimbleness-save-u}}} {{mod=@{nimbleness_save_bonus}}} {{r1=[[@{d20}+@{nimbleness_save_bonus}@{pbd_safe}]]}} @{rtype}+@{nimbleness_save_bonus}@{pbd_safe}]]}} @{global_save_mod} @{charname_output}" data-i18n="nimbleness">Nimbleness</button>
                     </div>
                     <div class="saving-throw">
-                        <input type="checkbox" name="attr_constitution_save_prof" title="@{constitution_save_prof}" value="(@{pb})">
-                        <span name="attr_constitution_save_bonus" title="@{constitution_save_bonus}">0</span>
-                        <button type="roll" name="roll_constitution_save" value="@{wtype}&{template:simple} {{rname=^{constitution-save-u}}} {{mod=@{constitution_save_bonus}}} {{r1=[[@{d20}+@{constitution_save_bonus}@{pbd_safe}]]}} @{rtype}+@{constitution_save_bonus}@{pbd_safe}]]}} @{global_save_mod} @{charname_output}" data-i18n="constitution">Constitution</button>
+                        <input type="checkbox" name="attr_aim_save_prof" title="@{aim_save_prof}" value="(@{pb})">
+                        <span name="attr_aim_save_bonus" title="@{aim_save_bonus}">0</span>
+                        <button type="roll" name="roll_aim_save" value="@{wtype}&{template:simple} {{rname=^{aim-save-u}}} {{mod=@{aim_save_bonus}}} {{r1=[[@{d20}+@{aim_save_bonus}@{pbd_safe}]]}} @{rtype}+@{aim_save_bonus}@{pbd_safe}]]}} @{global_save_mod} @{charname_output}" data-i18n="aim">Aim</button>
                     </div>
                     <div class="saving-throw">
                         <input type="checkbox" name="attr_intelligence_save_prof" title="@{intelligence_save_prof}" value="(@{pb})">
@@ -1278,12 +1278,12 @@
                                 <span data-i18n="attr:-u">ATTRIBUTE:</span>
                                 <select name="attr_toolattr_base">
                                     <option value="@{strength_mod}" selected="selected" data-i18n="strength-u">STRENGTH</option>
-                                    <option value="@{dexterity_mod}" data-i18n="dexterity-u">DEXTERITY</option>
-                                    <option value="@{constitution_mod}" data-i18n="constitution-u">CONSTITUTION</option>
+                                    <option value="@{nimbleness_mod}" data-i18n="nimbleness-u">NIMBLENESS</option>
+                                    <option value="@{aim_mod}" data-i18n="aim-u">AIM</option>
                                     <option value="@{intelligence_mod}" data-i18n="intelligence-u">INTELLIGENCE</option>
                                     <option value="@{wisdom_mod}" data-i18n="wisdom-u">WISDOM</option>
                                     <option value="@{charisma_mod}" data-i18n="charisma-u">CHARISMA</option>
-                                    <option value="?{Attribute?|Strength,@{strength_mod}|Dexterity,@{dexterity_mod}|Constitution,@{constitution_mod}|Intelligence,@{intelligence_mod}|Wisdom,@{wisdom_mod}|Charisma,@{charisma_mod}}" data-i18n="query-attr-u">QUERY ATTRIBUTE</option>
+                                    <option value="?{Attribute?|Strength,@{strength_mod}|Nimbleness,@{nimbleness_mod}|Aim,@{aim_mod}|Intelligence,@{intelligence_mod}|Wisdom,@{wisdom_mod}|Charisma,@{charisma_mod}}" data-i18n="query-attr-u">QUERY ATTRIBUTE</option>
                                 </select>
                                 <span data-i18n="mods:-u">MODS:</span>
                                 <input type="text" class="num" name="attr_tool_mod" title="@{tool_mod}" value="0">
@@ -1420,8 +1420,8 @@
                                 <span data-i18n="attack:-u">ATTACK:</span>
                                 <select name="attr_atkattr_base">
                                     <option value="@{strength_mod}" selected="selected" data-i18n="str-u">STR</option>
-                                    <option value="@{dexterity_mod}" data-i18n="dex-u">DEX</option>
-                                    <option value="@{constitution_mod}" data-i18n="con-u">CON</option>
+                                    <option value="@{nimbleness_mod}" data-i18n="dex-u">DEX</option>
+                                    <option value="@{aim_mod}" data-i18n="con-u">CON</option>
                                     <option value="@{intelligence_mod}" data-i18n="int-u">INT</option>
                                     <option value="@{wisdom_mod}" data-i18n="wis-u">WIS</option>
                                     <option value="@{charisma_mod}" data-i18n="cha-u">CHA</option>
@@ -1450,8 +1450,8 @@
                                 <span>+</span>
                                 <select name="attr_dmgattr">
                                     <option value="@{strength_mod}" selected="selected" data-i18n="str-u">STR</option>
-                                    <option value="@{dexterity_mod}" data-i18n="dex-u">DEX</option>
-                                    <option value="@{constitution_mod}" data-i18n="con-u">CON</option>
+                                    <option value="@{nimbleness_mod}" data-i18n="dex-u">DEX</option>
+                                    <option value="@{aim_mod}" data-i18n="con-u">CON</option>
                                     <option value="@{intelligence_mod}" data-i18n="int-u">INT</option>
                                     <option value="@{wisdom_mod}" data-i18n="wis-u">WIS</option>
                                     <option value="@{charisma_mod}" data-i18n="cha-u">CHA</option>
@@ -1473,8 +1473,8 @@
                                 <span>+</span>
                                 <select name="attr_dmg2attr">
                                     <option value="@{strength_mod}" data-i18n="str-u">STR</option>
-                                    <option value="@{dexterity_mod}" data-i18n="dex-u">DEX</option>
-                                    <option value="@{constitution_mod}" data-i18n="con-u">CON</option>
+                                    <option value="@{nimbleness_mod}" data-i18n="dex-u">DEX</option>
+                                    <option value="@{aim_mod}" data-i18n="con-u">CON</option>
                                     <option value="@{intelligence_mod}" data-i18n="int-u">INT</option>
                                     <option value="@{wisdom_mod}" data-i18n="wis-u">WIS</option>
                                     <option value="@{charisma_mod}" data-i18n="cha-u">CHA</option>
@@ -1494,8 +1494,8 @@
                                 <span data-i18n="saving-throw:-u">SAVING THROW:</span>
                                 <select name="attr_saveattr">
                                     <option value="Strength" selected="selected" data-i18n="str-u">STR</option>
-                                    <option value="Dexterity" data-i18n="dex-u">DEX</option>
-                                    <option value="Constitution" data-i18n="con-u">CON</option>
+                                    <option value="Nimbleness" data-i18n="dex-u">DEX</option>
+                                    <option value="Aim" data-i18n="con-u">CON</option>
                                     <option value="Intelligence" data-i18n="int-u">INT</option>
                                     <option value="Wisdom" data-i18n="wis-u">WIS</option>
                                     <option value="Charisma" data-i18n="cha-u">CHA</option>
@@ -1504,8 +1504,8 @@
                                 <select name="attr_savedc">
                                     <option value="(@{spell_save_dc})" selected="selected" data-i18n="spell-u">SPELL</option>
                                     <option value="(@{strength_mod}+8+@{pb})" data-i18n="str-u">STR</option>
-                                    <option value="(@{dexterity_mod}+8+@{pb})" data-i18n="dex-u">DEX</option>
-                                    <option value="(@{constitution_mod}+8+@{pb})" data-i18n="con-u">CON</option>
+                                    <option value="(@{nimbleness_mod}+8+@{pb})" data-i18n="dex-u">DEX</option>
+                                    <option value="(@{aim_mod}+8+@{pb})" data-i18n="con-u">CON</option>
                                     <option value="(@{intelligence_mod}+8+@{pb})" data-i18n="int-u">INT</option>
                                     <option value="(@{wisdom_mod}+8+@{pb})" data-i18n="wis-u">WIS</option>
                                     <option value="(@{charisma_mod}+8+@{pb})" data-i18n="cha-u">CHA</option>
@@ -1860,8 +1860,8 @@
                 <select name="attr_spellcasting_ability">
                     <option value="0*" data-i18n="none-u">NONE</option>
                     <option value="@{strength_mod}+" data-i18n="strength-u">STRENGTH</option>
-                    <option value="@{dexterity_mod}+" data-i18n="dexterity-u">DEXTERITY</option>
-                    <option value="@{constitution_mod}+" data-i18n="constitution-u">CONSTITUTION</option>
+                    <option value="@{nimbleness_mod}+" data-i18n="nimbleness-u">NIMBLENESS</option>
+                    <option value="@{aim_mod}+" data-i18n="aim-u">AIM</option>
                     <option value="@{intelligence_mod}+" data-i18n="intelligence-u">INTELLIGENCE</option>
                     <option value="@{wisdom_mod}+" data-i18n="wisdom-u">WISDOM</option>
                     <option value="@{charisma_mod}+" data-i18n="charisma-u">CHARISMA</option>
@@ -1998,8 +1998,8 @@
                                     <select name="attr_spellsave">
                                         <option value="" selected="selected" data-i18n="none-u">NONE</option>
                                         <option value="Strength" data-i18n="str-u">STR</option>
-                                        <option value="Dexterity" data-i18n="dex-u">DEX</option>
-                                        <option value="Constitution" data-i18n="con-u">CON</option>
+                                        <option value="Nimbleness" data-i18n="dex-u">DEX</option>
+                                        <option value="Aim" data-i18n="con-u">CON</option>
                                         <option value="Intelligence" data-i18n="int-u">INT</option>
                                         <option value="Wisdom" data-i18n="wis-u">WIS</option>
                                         <option value="Charisma" data-i18n="cha-u">CHA</option>
@@ -2188,8 +2188,8 @@
                                     <select name="attr_spellsave">
                                         <option value="" selected="selected" data-i18n="none-u">NONE</option>
                                         <option value="Strength" data-i18n="str-u">STR</option>
-                                        <option value="Dexterity" data-i18n="dex-u">DEX</option>
-                                        <option value="Constitution" data-i18n="con-u">CON</option>
+                                        <option value="nimbleness" data-i18n="dex-u">DEX</option>
+                                        <option value="Aim" data-i18n="con-u">CON</option>
                                         <option value="Intelligence" data-i18n="int-u">INT</option>
                                         <option value="Wisdom" data-i18n="wis-u">WIS</option>
                                         <option value="Charisma" data-i18n="cha-u">CHA</option>
